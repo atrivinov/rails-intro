@@ -7,6 +7,29 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Estoy en contact</h1>
+  <h1>Agregando logica a HTML desde Rails</h1>
+  <% members = ["thanh", "dimitri", "germain", "damien", "julien"] %>
+
+<h2>Lista OL con logica directa desde el HTML file</h2>
+<ol>
+  <% members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+<!--Creado desde instance variables del controller-->
+<h2>Lista OL agregando logica desde el controller por medio de instance variables</h2>
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member.capitalize %></li>
+  <% end %>
+</ol>
+
+<form action="/contact" method="get">
+  <input type="text" name="member" placeholder="Who are you looking for?">
+  <input type="submit">
+</form>
+
+
+
 </body>
 </html>
